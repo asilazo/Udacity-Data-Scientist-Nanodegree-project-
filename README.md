@@ -14,4 +14,4 @@ The dataset used is a ficticious one, that is collected on ficticious customers 
 
 ## References
 
-References have been made fromthe book "Data Science for Martketing Analytics by 2nd Edition by Mirza Rahim Baig, Gururajan Govindan, and Vishwesh Ravi Shrimali"
+References have been made from the book "Data Science for Martketing Analytics by 2nd Edition by Mirza Rahim Baig, Gururajan Govindan, and Vishwesh Ravi Shrimali"
