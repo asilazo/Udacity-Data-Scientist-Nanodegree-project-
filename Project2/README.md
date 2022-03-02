@@ -69,4 +69,6 @@ There are three parts for this project are:
 
   The project includes a web app that can be used by an emergency worker to input a message and get classification results in several categories. The web app will also display 
   visualizations of the data. The outputs are shown below:
+  ![image](https://user-images.githubusercontent.com/10689184/156428388-39dbda78-771d-4d70-931d-412ed56ff6f9.png)
+
 
