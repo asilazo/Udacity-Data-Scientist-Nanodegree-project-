@@ -1,11 +1,10 @@
-Data Scientist Nanodegree Udacity
-#Recommendations With IBM project
+# Recommendations With IBM project
 
-##Introduction
+## Introduction
 
 In this project, I analyze the interactions that users have with articles on the IBM Watson Studio platform, and make recommendations to them about new articles they'll like.
 
-##Motivation
+## Motivation
 
 For this project I looked at the interactions that users have with articles on the IBM Watson Studio platform.
 
@@ -23,7 +22,7 @@ In order to determine which articles to show to each user, I performed a study o
     sklearn
     jupyter notebook
 
-##Data
+## Data
 
     user-item-interactions.csv: Interactions between users and articles.
     articles_community.csv: Contents of articles.
@@ -48,7 +47,7 @@ In order to determine which articles to show to each user, I performed a study o
 4. Content Based Recommendations
 
    Given the amount of content available for each article, there are a number of different ways in which one might choose to implement a content based recommendations system. 
-   Using NLP skills, you might come up with some extremely creative ways to develop a content based recommendation system. Be encouraged to complete a content based recommendation 
+   Using NLP skills, you might come up with some extremely creative ways to develop a content based recommendation system. Be encouraged to complete a content based              recommendation 
    system, but not required to do so to complete this project.
 
 5. Matrix Factorization
