@@ -87,9 +87,31 @@ def model_pipeline_cv():
 
     return cv
 
+#
+def build_model():
+    """
+    Builds classifier and tunes model using GridSearchCV.
+    
+    Returns:
+    cv: Classifier 
+    """    
+    pipeline = Pipeline([
+    ('vect', CountVectorizer(tokenizer=tokenize)),
+    ('tfidf', TfidfTransformer()),
+    ('clf', MultiOutputClassifier(RandomForestClassifier()))
+    ])
+        
+    parameters = {
+        'clf__estimator__n_estimators' : [50, 100]
+    }
+    
+    cv = GridSearchCV(pipeline, param_grid=parameters, verbose=3)
+    
+    return cv
 
 
-def evaluate_model(model, X_test, y_test):
+
+def evaluate_model(model, X_test, Y_test):
     """
     Evaluates the performance of model and returns classification report. 
     
@@ -102,8 +124,8 @@ def evaluate_model(model, X_test, y_test):
     Classification report for each column
     """
     y_pred = model.predict(X_test)
-    for index, column in enumerate(y_test):
-        print(column, classification_report(y_test[column], y_pred[:, index]))
+    for index, column in enumerate(Y_test):
+        print(column, classification_report(Y_test[column], y_pred[:, index]))
         
         
 def save_model(model, model_filepath):
@@ -117,16 +139,16 @@ def main():
         database_filepath, model_filepath = sys.argv[1:]
         print('Loading data...\n    DATABASE: {}'.format(database_filepath))
         X, Y = load_data(database_filepath)
-        X_train, X_test, y_train, y_test = train_test_split(X, Y, test_size=0.2)
+        X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2)
         
         print('Building model...')
         model = build_model()
         
         print('Training model...')
-        model.fit(X_train, y_train)
+        model.fit(X_train, Y_train)
         
         print('Evaluating model...')
-        evaluate_model(model, X_test, y_test)
+        evaluate_model(model, X_test, Y_test)
 
         print('Saving model...\n    MODEL: {}'.format(model_filepath))
         save_model(model, model_filepath)
