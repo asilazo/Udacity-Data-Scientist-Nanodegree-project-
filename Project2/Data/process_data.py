@@ -26,46 +26,43 @@ def load_data(messages_filepath, categories_filepath):
     return df
 
 def clean_data(df):
-     """
-    Create a dataframe of the 36 category columns
     """
-    categories = df['categories'].str.split(';', expand=True)
-
-    """
-    Select the first row of the categories dataframe, use this row to extract a list of new column names for categories.
-    """
-
-    row = categories.head(1)
+    Cleans the dataframe.
     
+    Parameters:
+    df: DataFrame
+    
+    Returns:
+    df: Cleaned DataFrame
+    
+    """
+    # create a dataframe of the 36 individual category columns
+    categories = df['categories'].str.split(';', expand=True)
+    # select first row of the categories dataframe
+    row = categories.head(1)
+    # apply a lambda function that takes everything 
+    # up to the second to last character of each string with slicing
     # to create new column names for categories
     category_colnames = row.applymap(lambda x: x[:-2]).iloc[0,:]
-
     # rename the columns of 'categories'
     categories.columns = category_colnames
     
-
-    """
-    Set each value to be the last character of the string and convert column from string to numeric
-    """
+    # iterate through the category columns in df to keep only the
+    # last character of the string 
     for column in categories:
         categories[column] = categories[column].str.get(-1)
         categories[column] = pd.to_numeric(categories[column])
         
-    """
-    Replace categories column in df with new category columns.
-    """
+    # drop the original categories column from `df`
     df.drop('categories', axis=1, inplace=True)
-
-
-    # concatenate the original dataframe with the new `categories` data
+    # concatenate the original dataframe with the new `categories` dataframe
     df = pd.concat([df, categories], axis=1)
-
     # drop duplicates
     df.drop_duplicates(inplace=True)
     return df
     
 def save_data(df, database_filepath):
-    """Stores the dataframe in a SQLite database."""
+    """Stores df in a SQLite database."""
     engine = create_engine(f'sqlite:///{database_filepath}')
     df.to_sql('Clean_Data', engine, index=False, if_exists='replace')  
 
