@@ -70,5 +70,24 @@ There are three parts for this project are:
   The project includes a web app that can be used by an emergency worker to input a message and get classification results in several categories. The web app will also display 
   visualizations of the data. The outputs are shown below:
   ![image](https://user-images.githubusercontent.com/10689184/156428388-39dbda78-771d-4d70-931d-412ed56ff6f9.png)
+  
+  
+  ## Instructions
+
+    Run the following commands in the project's root directory to set up your database and model.
+        To run ETL pipeline that cleans data and stores in database
+
+        python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
+
+        To run ML pipeline that trains classifier and saves
+
+        python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl
+
+    Run the following command in the app's directory to run your web app.
+
+python run.py
+
+    Go to http://0.0.0.0:3000/
+
 
 
