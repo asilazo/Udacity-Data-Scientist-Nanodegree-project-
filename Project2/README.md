@@ -6,7 +6,7 @@
     *File Descriptions
     *Components
     *Instructions of How to Interact With Project
-    *Licensing, Authors, Acknowledgements, etc.
+    
 
 ## Project Motivation
 
