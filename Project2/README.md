@@ -69,7 +69,9 @@ There are three parts for this project are:
 
   The project includes a web app that can be used by an emergency worker to input a message and get classification results in several categories. The web app will also display 
   visualizations of the data. The outputs are shown below:
-  ![image](https://user-images.githubusercontent.com/10689184/156428388-39dbda78-771d-4d70-931d-412ed56ff6f9.png)
+ ![image](https://user-images.githubusercontent.com/10689184/156709169-2619116f-e626-4e13-bd50-7b9ffc4cf014.png)
+ ![image](https://user-images.githubusercontent.com/10689184/156709232-dab5e088-878a-4272-9914-65701b95ad10.png)
+
   
   
   ## Instructions
@@ -85,9 +87,16 @@ There are three parts for this project are:
 
     Run the following command in the app's directory to run your web app.
 
-python run.py
+        python run.py
 
     Go to http://0.0.0.0:3000/
+    
+    
+  ## References
+  
+  1. Data Science in Production, by Ben G. Weber
+  2. Building Web Apps with Flask, by Malhar Lathkar
 
-
+  ## Acknowledgemnt
+  Much appreciation to Udacity for the starter code templates
 
