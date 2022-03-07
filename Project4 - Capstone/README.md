@@ -10,10 +10,13 @@ This project uses Convolution Neural Networks, CNNs, to predict the dog breeds
 
     python 3.6 and above
     numpy
+    random
     matplotlib
     pickle
     glob
-    nltk
+    tqdm
+    Pillow
+    urllib
     sklearn
     opencV
     keras with TensorFlow backend
@@ -41,4 +44,4 @@ The CNN created from scratch had an accuracy of about 7.7%, while the VGG16 had 
 1. https://towardsdatascience.com/dog-breed-classification-using-deep-learning-concepts-23213d67936c
 2. https://medium.com/nanonets/how-to-easily-build-a-dog-breed-image-classification-model-2fd214419cde
 3. The Computer Vision Workshop by Hafsa Asad, Vishwesh Ravi Shrimali, and Nikhil Singh
-4. 
+
